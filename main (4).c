@@ -1,15 +1,32 @@
-#include <stdio.h>
+#include <iostream>
 
-int main() {
+using namespace std;
 
-	double A,B;
+int main()
+{
+    int a, b;
 
-	scanf("%lf %lf", &A, &B);
+    cin >> a >> b;
+    cout << a / b;
 
-	printf("%.2000lf\n", A/B);
+    a %= b;
+    cout << ".";
+    for (int i = 0;i < 1200;i++)
+    {
+        a *= 10;
+        if (a % b == 0)
+        {
+            cout << a / b;
+            break;
+        }
+        else if (a / b >= 1)
+        {
+            cout << a / b;
+            a %= b;
+        }
+        else
+            cout << "0";
 
-
-
-	return 0;
+    }
 
 }
